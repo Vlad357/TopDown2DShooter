@@ -12,6 +12,8 @@ public class ScoreCounter : MonoBehaviour
     public TextMeshProUGUI playerCountText;
     public TextMeshProUGUI enemyCountText;
 
+    [SerializeField] private int scoreCount = 10;
+
     private void Start()
     {
         playerCountText.text = scoreData.playerScore.ToString();
@@ -23,13 +25,13 @@ public class ScoreCounter : MonoBehaviour
 
     private void AddPlayerCount()
     {
-        scoreData.AddPlayerScore(1);
+        scoreData.AddPlayerScore(scoreCount);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void AddEnemyCount()
     {
-        scoreData.AddEnemyScore(1);
+        scoreData.AddEnemyScore(scoreCount);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
