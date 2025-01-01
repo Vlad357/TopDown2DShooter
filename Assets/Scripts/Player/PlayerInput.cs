@@ -23,13 +23,13 @@ public class PlayerInput : MonoBehaviour
     private void OnEnable()
     {
         _input.Enable();
-        _input.Player.Attack.started += _ => _controllable.Shoot();
+        _input.Player.Attack.performed += _ => _controllable.Shoot();
     }
 
     private void OnDisable()
     {
         _input.Disable();
-        _input.Player.Attack.started -= _ => _controllable.Shoot();
+        _input.Player.Attack.performed -= _ => _controllable.Shoot();
     }
 
     private void Update()
